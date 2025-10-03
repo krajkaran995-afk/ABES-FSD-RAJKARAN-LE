@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration - ABES Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+
+      if (name.length < 6) {
+        alert("Name must be at least 6 characters long");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long");
+        return false;
+      }
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Invalid email format");
+        return false;
+      }
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Phone number must be 10 digits");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">ABES Bookstore</div>
+    <img src="ABES-Engineering-College.jpg" alt="College" height="280" width="320">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="registration.html" class="active">Registration</a></li>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" required>
+
+      <label>Sex:</label>
+      <input type="radio" name="sex"> Male
+      <input type="radio" name="sex"> Female
+
+      <label>Date of Birth:</label>
+      <select><option>Day</option></select>
+      <select><option>Month</option></select>
+      <select><option>Year</option></select>
+
+      <label>Languages Known:</label>
+      <input type="checkbox"> English
+      <input type="checkbox"> Hindi
+      <input type="checkbox"> Other
+      <textarea id="checkbox"></textarea>
+
+      <label for="address">Address:</label>
+      <textarea id="address"></textarea>
+
+      <button type="submit">Register</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; ABES Bookstore</p>
+  </footer>
+</body>
+</html>
