@@ -1,0 +1,28 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 200px;
+  background-color: #e2e8f0;
+  border: 2px solid #a349d3;
+  padding: 10px;
+}
+
+.item {
+  background: #a085c6;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  width: 60px;
+}
+
